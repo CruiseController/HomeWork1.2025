@@ -58,6 +58,7 @@ public abstract class Animal {
         System.out.println("Я ем");
     }
 
+
     @Override
     public String toString() {
         return ("Привет! Меня зовут " + name + " , мне " + age + " " + YearCase.yearCase(age) + ", я вешу - " + weight + "кг, мой цвет - " + color);

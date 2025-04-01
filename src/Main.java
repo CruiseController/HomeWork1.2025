@@ -5,10 +5,7 @@ import data.ActionsData;
 import data.AnimalsDataEnum;
 import tools.IsNumericCheck;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -17,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Animal> animalList = new ArrayList<>();
+        List<Animal> animalList = new ArrayList<>();
 
         while (true) {
             ActionsData inputData = null;
@@ -39,8 +36,11 @@ public class Main {
                     break;
 
                 case LIST:
-                    System.out.println(animalList);
+
+                    animalList.forEach(System.out ::println);
+
                     break;
+
                 case EXIT:
                     System.exit(0);
             }
@@ -69,7 +69,9 @@ public class Main {
             String ageStr = scanner.nextLine();
             if (IsNumericCheck.isNumeric(ageStr)) {
                 age = Integer.parseInt(ageStr);
-                break;
+                if (age > 0) {
+                    break;
+                }
             }
             System.out.println("Неподдерживаемый тип данных");
         }
@@ -79,7 +81,9 @@ public class Main {
             String weightStr = scanner.nextLine();
             if (IsNumericCheck.isNumeric(weightStr)) {
                 weight = Integer.parseInt(weightStr);
-                break;
+                if (weight > 0) {
+                    break;
+                }
             }
             System.out.println("Неподдерживаемый тип данных");
         }
